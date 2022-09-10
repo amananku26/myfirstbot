@@ -1,5 +1,8 @@
 require("dotenv").config()
 const TelegramBot = require('node-telegram-bot-api');
+const request = require('request');
+const express = require('express');
+const app = express();
 
 // replace the value below with the Telegram token you receive from @BotFather
 console.log(process.env.TELEGRAM_TOKEN_FATHERBOT)
@@ -38,6 +41,8 @@ bot.on('message', (msg) => {
   }
  
 });
+const PORT = process.env.PORT || 3000;
 
-bot.launch();
-
+app.listen(PORT, function () {
+    console.log(`Server is running at port ${PORT}`);
+});
