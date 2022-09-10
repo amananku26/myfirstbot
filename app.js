@@ -39,3 +39,5 @@ bot.on('message', (msg) => {
  
 });
 
+bot.launch();
+
