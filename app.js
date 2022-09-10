@@ -28,6 +28,13 @@ bot.on('message', (msg) => {
   const chatId = msg.chat.id;
 
   // send a message to the chat acknowledging receipt of their message
-  bot.sendMessage(chatId, 'Aman Here');
+  if(msg.text === '/hello'){
+    bot.sendMessage(chatId, 'This Bot is made by Aman Anku');
+    const url = 'https://telegram.org/img/t_logo.png';
+    bot.sendPhoto(chatId, url);
+  } else {
+    bot.sendMessage(chatId, 'You can Send /hello \nCurrently the BOT has limited Functionallity');
+  }
+ 
 });
 
